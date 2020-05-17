@@ -1,13 +1,27 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 import {Button} from 'react-native-elements';
+import {StackNavigationProp} from '@react-navigation/stack';
+import {StackParamList} from '../../navigators/mainNavigatorTypes';
 import styles from './styles';
 
-const Initial: React.FC = () => {
+type ScreenNavigationProp = StackNavigationProp<StackParamList, 'Parameters'>;
+interface IProps {
+  navigation: ScreenNavigationProp;
+}
+
+const Initial: React.FC<IProps> = ({navigation}) => {
   const buttons: string[] = ['Merge Sort', 'Quick Sort'];
   const ButtonGroup: React.FC = () => {
     const buttonGroup = buttons.map((button: string) => (
-      <Button key={button} title={button} buttonStyle={styles.button} />
+      <Button
+        key={button}
+        title={button}
+        buttonStyle={styles.button}
+        onPress={() => {
+          navigation.navigate('Parameters', {sortType: button});
+        }}
+      />
     ));
     return <>{buttonGroup}</>;
   };

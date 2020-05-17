@@ -1,11 +1,17 @@
 import React from 'react';
 import {Button} from 'react-native-elements';
-const Parameters: React.FC = () => {
+
+interface IProps {
+  navigation: any;
+  route: any;
+}
+
+const Parameters: React.FC<IProps> = ({navigation, route}) => {
   return (
     <Button
-      title="Go To Next Screen"
+      title={`Go To Next Screen ${route.params.sortType}`}
       onPress={() => {
-        console.log('presed');
+        navigation.navigate('Initial');
       }}
     />
   );
