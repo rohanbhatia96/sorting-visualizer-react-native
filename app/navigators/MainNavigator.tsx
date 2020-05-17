@@ -7,7 +7,13 @@ const Stack = createStackNavigator();
 const MainNavigator = () => {
   return (
     <Stack.Navigator initialRouteName="Sorting Visualizer">
-      <Stack.Screen name="Sorting Visualizer" component={InitialScreen} />
+      <Stack.Screen
+        name="Sorting Visualizer"
+        component={InitialScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
     </Stack.Navigator>
   );
 };
