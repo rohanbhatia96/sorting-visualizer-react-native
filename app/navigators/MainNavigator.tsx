@@ -6,16 +6,8 @@ const Stack = createStackNavigator();
 
 const MainNavigator = () => {
   return (
-    <Stack.Navigator
-      initialRouteName="Initial"
-      screenOptions={{
-        headerStyle: {
-          backgroundColor: '#E0E0FA',
-          elevation: 0,
-        },
-        headerTintColor: '#25283D',
-      }}>
-      <Stack.Screen name="Initial" component={InitialScreen} />
+    <Stack.Navigator initialRouteName="Sorting Visualizer">
+      <Stack.Screen name="Sorting Visualizer" component={InitialScreen} />
     </Stack.Navigator>
   );
 };
