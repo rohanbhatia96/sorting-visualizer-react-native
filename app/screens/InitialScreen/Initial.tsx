@@ -5,7 +5,7 @@ import {StackNavigationProp} from '@react-navigation/stack';
 import {StackParamList} from '../../navigators/mainNavigatorTypes';
 import styles from './styles';
 
-type ScreenNavigationProp = StackNavigationProp<StackParamList, 'Parameters'>;
+type ScreenNavigationProp = StackNavigationProp<StackParamList, 'Initial'>;
 interface IProps {
   navigation: ScreenNavigationProp;
 }
