@@ -12,6 +12,14 @@ interface IProps {
   route: ScreenRouteProp;
 }
 
+const createRandomArray = (): number[] => {
+  let arr: number[] = [];
+  for (let i = 0; i < 100; i++) {
+    arr.push(Math.floor(Math.random() * 1000));
+  }
+  return arr;
+};
+
 const Parameters: React.FC<IProps> = ({navigation, route}) => {
   return (
     <Button
@@ -19,7 +27,7 @@ const Parameters: React.FC<IProps> = ({navigation, route}) => {
       onPress={() => {
         navigation.navigate('Sorting', {
           sortType: route.params.sortType,
-          numArray: [10, 10, 10],
+          numArray: createRandomArray(),
         });
       }}
     />
