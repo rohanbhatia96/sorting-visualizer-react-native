@@ -16,7 +16,7 @@ interface IProps {
 const Sorting: React.FC<IProps> = ({route}) => {
   const [inputArray, setInputArray] = useState<number[]>(route.params.numArray);
   const [barColor, setBarColor] = useState<string[]>(
-    Array(inputArray.length).fill('red'),
+    Array(inputArray.length).fill('#add8e6'),
   );
 
   const ArrayView: React.FC = () => {
@@ -28,6 +28,7 @@ const Sorting: React.FC<IProps> = ({route}) => {
           {
             height: `${(num / 1000) * 100}%`,
             backgroundColor: barColor[index],
+            marginHorizontal: 100 / inputArray.length,
           },
         ]}
       />
@@ -38,9 +39,9 @@ const Sorting: React.FC<IProps> = ({route}) => {
   const onSortingStart = () => {
     let animArr = getMergeSortAnimations(inputArray);
     for (let i = 0; i < animArr.length; i++) {
-      let barColorAnim = Array(inputArray.length).fill('red');
+      let barColorAnim = Array(inputArray.length).fill('#add8e6');
       barColorAnim = barColorAnim.fill(
-        'blue',
+        '#399cbd',
         animArr[i].scanArea.start,
         animArr[i].scanArea.end,
       );

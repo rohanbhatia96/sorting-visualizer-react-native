@@ -17,11 +17,10 @@ const styles = StyleSheet.create<Styles>({
   arrayContainer: {
     flex: 0.8,
     flexDirection: 'row',
-    backgroundColor: 'pink',
   },
   arraySingle: {
     flex: 1,
-    marginHorizontal: 2,
+    marginHorizontal: 0.5,
   },
 });
 

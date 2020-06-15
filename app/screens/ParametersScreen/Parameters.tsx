@@ -14,7 +14,7 @@ interface IProps {
 
 const createRandomArray = (): number[] => {
   let arr: number[] = [];
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 25; i++) {
     arr.push(Math.floor(Math.random() * 1000));
   }
   return arr;
