@@ -5,6 +5,7 @@ import {RouteProp} from '@react-navigation/native';
 import {StackParamList} from '../../navigators/mainNavigatorTypes';
 
 import {getMergeSortAnimations} from '../../helpers/mergeSort';
+import {getQuickSortAnimations} from '../../helpers/quickSort';
 import styles from './styles';
 
 type ScreenRouteProp = RouteProp<StackParamList, 'Sorting'>;
@@ -37,6 +38,14 @@ const Sorting: React.FC<IProps> = ({route}) => {
   };
 
   const onSortingStart = () => {
+    if (route.params.sortType === 'Merge Sort') {
+      mergeSortingStart();
+    } else {
+      quickSortingStart();
+    }
+  };
+
+  const mergeSortingStart = () => {
     let animArr = getMergeSortAnimations(inputArray);
     for (let i = 0; i < animArr.length; i++) {
       let barColorAnim = Array(inputArray.length).fill('#add8e6');
@@ -57,6 +66,28 @@ const Sorting: React.FC<IProps> = ({route}) => {
           return newArray;
         });
       }, 0);
+    }
+  };
+
+  const quickSortingStart = () => {
+    let tempArray = [...inputArray];
+    let anims = getQuickSortAnimations(tempArray);
+    for (let i = 0; i < anims.length; i++) {
+      let barColorAnim = Array(inputArray.length).fill('#add8e6');
+      barColorAnim[anims[i].index1] = '#399cbd';
+      barColorAnim[anims[i].index2] = '#399cbd';
+      setTimeout(() => {
+        setBarColor(barColorAnim);
+        setInputArray((prevArray) => {
+          let newArray: number[];
+          let temp: number;
+          newArray = [...prevArray];
+          temp = newArray[anims[i].index1];
+          newArray[anims[i].index1] = newArray[anims[i].index2];
+          newArray[anims[i].index2] = temp;
+          return newArray;
+        });
+      }, i * 1000);
     }
   };
 
