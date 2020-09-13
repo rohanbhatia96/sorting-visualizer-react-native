@@ -1,14 +1,20 @@
-# sorting-visualizer-react-native
+# Sorting Visualizer (React Native)
 
-## What Is The Project
+## What is the project?
 
-This is a the mobile application built on react-native. The programming langauge used is Typescript. This app visualizes 2 different sorting algorithms: Merge Sort and Quick Sort.
+The aim of this project is to understand how different sorting algorithms work. This is a a mobile application built on react-native which visualizes how merge sort and quick sort work. 
 
-## See The App In Action (Video)
+### Features
+
+1. Programming language: Typescript
+2. Framework: React Native
+3. Algorithms visualized: Merge Sort and Quick Sort
+
+## See the app in action (video)
 
 [Sorting Visualizer App on Vimeo](https://vimeo.com/430651229)
 
-## App Images
+## App images
 
 ![Sorting Visualizer - Initial Screen](https://user-images.githubusercontent.com/20585043/85117269-3b3f2f80-b23c-11ea-8f21-f5bdebf7b895.jpg)  
 
